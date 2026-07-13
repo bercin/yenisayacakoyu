@@ -1,0 +1,50 @@
+# ── Atölye Kuzey ─────────────────────────────────────────────
+# Özgün Jekyll portfolyo teması
+title: Atölye Kuzey
+tagline: Mimarlık ve kentsel tasarım stüdyosu
+description: >-
+  Atölye Kuzey; konut, kamusal alan ve dönüşüm projeleri üreten
+  bağımsız bir mimarlık stüdyosudur.
+url: ""
+baseurl: ""
+lang: tr
+
+author:
+  name: Atölye Kuzey
+  email: merhaba@atolyekuzey.example
+
+# Sosyal bağlantılar (footer'da kullanılır)
+social:
+  instagram: "https://instagram.com/"
+  linkedin: "https://linkedin.com/"
+  behance: "https://behance.net/"
+
+# Koleksiyonlar
+collections:
+  projects:
+    output: true
+    permalink: /projeler/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /gunluk/:title/
+
+markdown: kramdown
+sass:
+  style: compressed
+  sass_dir: _sass
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules

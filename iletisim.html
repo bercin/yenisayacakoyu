@@ -1,0 +1,33 @@
+---
+layout: default
+title: İletişim
+permalink: /iletisim/
+---
+<section class="section">
+  <div class="wrap">
+    <header class="post-head" style="padding-top: clamp(2rem, 5vw, 3.5rem);">
+      <p class="eyebrow">İletişim</p>
+      <h1>Bir proje mi var aklınızda?</h1>
+    </header>
+
+    <div class="prose prose-narrow">
+      <p>Yeni işler, iş birlikleri ve staj başvuruları için formu kullanabilir ya da doğrudan <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a> adresine yazabilirsiniz. Genellikle iki iş günü içinde dönüş yaparız.</p>
+    </div>
+
+    <form class="contact-form" action="#" method="post" onsubmit="return false">
+      <div>
+        <label for="ad">Adınız</label>
+        <input id="ad" name="ad" type="text" autocomplete="name" required>
+      </div>
+      <div>
+        <label for="eposta">E-posta</label>
+        <input id="eposta" name="eposta" type="email" autocomplete="email" required>
+      </div>
+      <div>
+        <label for="mesaj">Mesajınız</label>
+        <textarea id="mesaj" name="mesaj" rows="6" required></textarea>
+      </div>
+      <button type="submit">Gönder</button>
+    </form>
+  </div>
+</section>
