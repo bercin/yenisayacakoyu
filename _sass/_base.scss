@@ -1,0 +1,90 @@
+/* ── Atölye Kuzey — v2: krem & lacivert dili ────────────────
+   Palet: krem zemin, koyu lacivert mürekkep, şeftali dolgu.
+   Tipografi: Sora (başlık), Manrope (metin). */
+
+:root {
+  --cream:  #F8F3EC;
+  --ink:    #191645;
+  --muted:  #55527A;
+  --peach:  #F7E4CF;
+  --card:   #FFFFFF;
+  --line:   rgba(25, 22, 69, 0.12);
+
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-body:    "Manrope", system-ui, sans-serif;
+
+  --r-card: 16px;
+  --r-pill: 999px;
+
+  --wrap: 1200px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.5em;
+}
+
+.wrap {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  clip-path: inset(50%); overflow: hidden; white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--ink); color: var(--cream); padding: .6rem 1rem;
+  z-index: 100;
+  &:focus { left: 0; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s ease, transform .6s ease;
+  &.is-in { opacity: 1; transform: none; }
+}

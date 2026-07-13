@@ -1,0 +1,23 @@
+---
+layout: default
+title: Günlük
+permalink: /gunluk/
+---
+<section class="section">
+  <div class="wrap">
+    <header class="post-head">
+      <p class="eyebrow">Stüdyo notları</p>
+      <h1>Günlük</h1>
+    </header>
+
+    <div class="post-cards">
+      {% for post in site.posts %}
+      <a class="post-card reveal" href="{{ post.url | relative_url }}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d.%m.%Y' }}</time>
+        <h3>{{ post.title }}</h3>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

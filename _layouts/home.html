@@ -1,0 +1,61 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow reveal">Mimarlık stüdyosu · İstanbul</p>
+      <h1 class="reveal">Yapıyı değil,<br><em>arasındaki boşluğu</em><br>tasarlıyoruz.</h1>
+    </div>
+    <aside class="hero-annot reveal" aria-label="Stüdyo notu">
+      <p class="annot-line">Kuruluş — 2017</p>
+      <p class="annot-line">Odak — Konut, kamusal alan, dönüşüm</p>
+      <p class="annot-line">Durum — Yeni işlere açık</p>
+      <a class="annot-link" href="{{ '/projeler/' | relative_url }}">Tüm projeler →</a>
+    </aside>
+  </div>
+</section>
+
+<section class="section projects-featured">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Seçili işler</h2>
+      <a class="section-link" href="{{ '/projeler/' | relative_url }}">Arşive git →</a>
+    </div>
+
+    <div class="project-grid">
+      {% assign items = site.projects | sort: 'order' %}
+      {% for project in items limit: 4 %}
+      <a class="project-card reveal" href="{{ project.url | relative_url }}">
+        <figure class="card-frame">
+          <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }} — proje görseli" loading="lazy">
+        </figure>
+        <div class="card-meta">
+          <h3>{{ project.title }}</h3>
+          <p class="card-client">{{ project.client }} · {{ project.year }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section blog-strip">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Günlükten</h2>
+      <a class="section-link" href="{{ '/gunluk/' | relative_url }}">Tümü →</a>
+    </div>
+    <div class="post-cards">
+      {% for post in site.posts limit: 3 %}
+      <a class="post-card reveal" href="{{ post.url | relative_url }}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d.%m.%Y' }}</time>
+        <h3>{{ post.title }}</h3>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 110 }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ content }}

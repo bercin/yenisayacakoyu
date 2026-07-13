@@ -1,0 +1,23 @@
+<header class="site-header">
+  <div class="wrap header-grid">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark" aria-hidden="true">✕</span>
+      <span class="brand-name">Atölye Kuzey</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-label">Menü</span>
+      <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Ana menü">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Anasayfa</a></li>
+        <li><a href="{{ '/projeler/' | relative_url }}" {% if page.url contains '/projeler' %}aria-current="page"{% endif %}>Projeler</a></li>
+        <li><a href="{{ '/gunluk/' | relative_url }}" {% if page.url contains '/gunluk' %}aria-current="page"{% endif %}>Günlük</a></li>
+        <li><a href="{{ '/hakkinda/' | relative_url }}" {% if page.url == '/hakkinda/' %}aria-current="page"{% endif %}>Hakkında</a></li>
+        <li><a class="nav-cta" href="{{ '/iletisim/' | relative_url }}">İletişim</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
